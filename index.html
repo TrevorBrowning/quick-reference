@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b5121b">
+  <title>Quick Reference</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand-mark" aria-hidden="true">S</div>
+    <div>
+      <h1>Quick Reference</h1>
+      <p>Personal reference card</p>
+    </div>
+    <button id="importButton" class="icon-button" type="button" aria-label="Import data file" title="Import data">＋</button>
+    <input id="fileInput" type="file" accept=".json,application/json" hidden>
+  </header>
+
+  <nav class="tabs" aria-label="Reference lists">
+    <button class="tab active" id="mppTab" type="button" role="tab" aria-selected="true" aria-controls="mppPanel">MPP</button>
+    <button class="tab" id="invTab" type="button" role="tab" aria-selected="false" aria-controls="invPanel">Inv Codes</button>
+  </nav>
+
+  <main>
+    <section id="mppPanel" class="panel" role="tabpanel" aria-labelledby="mppTab">
+      <div class="section-heading">
+        <h2>MPP</h2>
+        <span id="mppCount" class="count">0 items</span>
+      </div>
+      <div id="mppList" class="entry-list">
+        <div class="empty-state">
+          <div class="empty-icon">≡</div>
+          <h3>Your MPP list goes here</h3>
+          <p>Import your private JSON file using the ＋ button above.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="invPanel" class="panel" role="tabpanel" aria-labelledby="invTab" hidden>
+      <div class="section-heading">
+        <h2>Inventory Codes</h2>
+        <span id="invCount" class="count">0 codes</span>
+      </div>
+      <div id="invList" class="entry-list">
+        <div class="empty-state">
+          <div class="empty-icon">⌁</div>
+          <h3>Your inventory codes go here</h3>
+          <p>Import your private JSON file using the ＋ button above.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="statusMessage" role="status" aria-live="polite">No data imported</span>
+    <button id="clearButton" class="text-button" type="button" hidden>Clear saved data</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
